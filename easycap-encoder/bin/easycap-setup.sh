@@ -1,7 +1,7 @@
 #!/bin/bash
 PREFIX="$(dirname $0)"
 CONFIG_FILE="${PREFIX}/../etc/easycap_encoder/easycap_encoder.conf"
-source <(grep = ${CONFIG_FILE} | tr -d ' ')
+source <(grep = ${CONFIG_FILE} | sed 's/ *= */=/g')
 
 zenity  --info --ok-label="Suivant" \
         --width=300 \
